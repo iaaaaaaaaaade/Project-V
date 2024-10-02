@@ -21,6 +21,7 @@ public class BotPaddle : MonoBehaviour
     void Update()
     {
         //super basic bot ai
+        //moving average, difference between where how much has to. Change the factors by a random amount.
         if (delay > 0)
         {
             delay--;
