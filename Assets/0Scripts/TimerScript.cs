@@ -8,6 +8,7 @@ public class TimerScript : MonoBehaviour
     public float gameTime = 0;
     public GameOverScreen GameOverScreen;
     public GameOverQuote GameOverQuote;
+    public GameOverScreen GameWonScreen;
     public float timeScaling;
     public float desiredGameSecondDuration;
 
@@ -20,12 +21,18 @@ public class TimerScript : MonoBehaviour
         GameOverScreen.Setup(gameTime, timeScaling);
         //GameOverQuote.Setup();
     }
+
+    void GameWon()
+    {
+        GameOverScreen.Setup(gameTime, timeScaling);
+    }
     public void FixedUpdate()
     {
         gameTime = Time.time;
-        if (gameTime == 15)
+        if (gameTime == desiredGameSecondDuration)
         {
-            GameOver();
+            gameTime = desiredGameSecondDuration;
+            GameWon();
         }
     }
 }

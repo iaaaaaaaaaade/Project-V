@@ -18,6 +18,12 @@ public class GameOverScreen : MonoBehaviour
         
         timeText.text = "0" + gameHour.ToString() + ":" + gameMinute.ToString() + " AM";
     }
+
+    public void Finish()
+    {
+        gameObject.SetActive(true);
+
+    }
     public void RestartButton()
     {
         SceneManager.LoadScene("ProjectV");
